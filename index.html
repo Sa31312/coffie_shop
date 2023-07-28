@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> responsive nav bar and web-page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    :root{
+      --text-font:'Poppins', sans-serif;
+      --title-font:'Pacifico', cursive;
+      --primary-color:#2b1712;
+      --second-color:#492d26;
+      --primary-color-light:#65463e;
+      --secondry-color:#ddb66f;
+      --title-color:#2e2624;
+      --text-color:#5b4c48;
+      --text-color-light:#847571;
+    }
+    body{
+      font-family: var(--title-font);
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      background-image: linear-gradient(181deg,#4B2C24 , #2B1712);
+    }
+    .container{
+      margin:0px auto;
+    }
+    .navbar{
+      background-color: var(--second-color);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    li {
+      list-style: none;
+      display: inline;
+    }
+    ul li a {
+      text-decoration: none;
+      font-size: 16px;
+      color: white;
+      margin-left: 20px;
+    }
+    ul li a:active{
+      color: var(--secondry-color);
+    }
+    hr.border-dashed {
+      border-bottom: 4px dashed var(--text-color-light);
+      border-top: none;
+    }
+    .hero-content{
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .hero-content p.qty{
+      color: var(--secondry-color);
+      font-size: 16px;
+      font-family: var(--text-font) ;
+    }
+    .hero-content h2{
+      font-size: 72px;
+      color: white;
+      font-weight: 400;
+      font-style: normal;
+    }
+    section#hero {
+      padding: 10px 0px 50px;
+    }
+    .hero-content p.content{
+      font-size: 16px;
+      color: white;
+      width: 412px;
+      font-family: var(--text-font);
+    }
+    .hero-content a.start{
+      padding: 10px 15px;
+      border-radius: 64px;
+      background-color: var(--secondry-color);
+      box-shadow: 0px 8px 32px 0px rgba(221, 183,112,0.25);
+      font-family: var(--text-font);
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      text-decoration: none;
+      color: black;
+    }
+    section#products {
+      border-radius: 60px 60px 0px 0px;
+      background-color: var(--second-color);
+      padding: 50px 0px 70px;
+    }
+    .product-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+    .content {
+    width: 418px;
+    height: 184px;
+    }
+    a.p-btn {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding: 9px 20px;
+    border-radius: 50px;
+    color: white;
+    font-family: var(--text-font);
+    font-size: 16px;
+    box-shadow: 0px 8px 24px 0px rgba(27, 17, 14, 0.50);
+    }
+    p.content-text {
+    font-family: var(--text-font);
+    color: white;
+    padding-top: 20px;
+    }
+    .p-box {
+    width: 536px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 25px 0px 25px 0px;
+    }
+    span.p-price {
+    display: block;
+    }
+    section#history {
+    padding: 50px 0px 80px;
+    background-color: white;
+    border-radius: 60px 60px 0px 0px;
+    margin-top: -50px;
+    }
+    .history-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .h-text {
+      width: 464px;
+    }
+    .h-text h2{
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 4000;
+    }
+    .h-text p{
+      font-family: var(--text-font);
+      color: var(--text-color);
+    }
+    section#steps,footer{
+      background-image: url('images/bg-coffee-beans 1.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 50px 0px;
+      border-radius: 60px 60px 0px 0px;
+      background-color: var(--second-color);
+      margin-top: -50px;
+    }
+    .step-content h3 {
+      font-size: 48px;
+      text-align: center;
+      color: white;
+      font-weight: 400;
+      line-height: 57.6px;
+    }
+    .steps {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px 0px;
+    }
+    .step-circle {
+      border: 15px solid var(--second-color);
+      width: 85px;
+      height: 85px;
+      background-color: var(--secondry-color);
+      text-align: center;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      position: absolute;
+      margin: -40px -15px;
+    }
+    .step-circle p {
+      font-style: normal;
+      font-family: var(--text-font);
+      font-size: 36px;
+    }
+    .step-img-circle {
+      width: 260px;
+      height: 260px;
+      background-color: var(--primary-color-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      box-shadow: 0px 8px 32px 0px rgba(27, 17, 14, 0.30);
+    }
+    p.step-text {
+      width: 272px;
+      font-size: 16px;
+      color: white;
+      margin-top: 40px;
+      font-family: var(--text-font);
+    }
+    .c-2-circle {
+      margin-top: 50px;
+    }
+    section#testimonial {
+      padding: 60px 0px 80px;
+      background-color: white;
+      border-radius: 60px 60px 0px 0px;
+      margin-top: -46px;
+    }
+    .comment {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .comment-text h4 {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .comment-text{
+      width: 583px;
+    }
+    .comment-text p {
+      font-family: var(--text-font);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#"><img src="images/logo.png"></a>
+        </div>
+        <div class="hambarger"></div>
+         <ul>
+          <li><a href="#hero">Home</a> </li>
+          <li><a href="#products">Products</a> </li>
+          <li><a href="#history">About</a> </li>
+          <li><a href="#steps">Steps</a> </li>
+          <li><a href="#testimonial">Testimonial</a> </li>
+        </ul>
+    </nav>
+    <hr class="border-dashed">
+  <section id="hero">
+    <div class="hero-content">
+      <img src="images/home-coffee.png">
+      <div class="content-text">
+        <p class="qty">EXCEPTIONAL QUALITY</p>
+        <h2>
+          It's time for a<br> 
+          good coffee<span><img src="images/home-coffee-2.png" width="100px" height="100px"></span>
+        </h2>
+        <p class="content">
+          Each select coffee bean reflects our commitment to Peruvian coffee growers, who bring the best select coffee to your table.
+        </p>
+        <a href="#" class="start">Get Started</a>
+      </div>
+    </div>
+    
+  </section>
+  <section id="products">
+    <div class="product-content">
+      <div class="content">
+        <a href="#" class="p-btn">Scroll Down</a>
+        <p class="content-text">
+          We strive to form deep partnerships with farmers from all over the world to create perspective together and form healthy working relationships built on trust and respect.
+        </p>
+      </div>
+      <div class="p-container">
+        <div class="p-box">
+          <div class="p-1">
+            <img src="images/p-1.png">
+            <p class="p-details">
+              Classic Coffee <span class="p-price">
+                $17.90
+              </span>
+            </p>
+          </div>
+           <div class="p-2">
+            <img src="images/p-2.png">
+            <p class="p-details">
+              Black coffee <span class="p-price">
+                $24.90
+              </span>
+            </p>
+          </div>
+          <div class="p-3">
+            <img src="images/p-3.png">
+            <p class="p-details">
+              Strong coffee <span class="p-price">
+                $32.90
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="history">
+    <div class="history-content">
+      <img src="images/about-coffee.png">
+      <div class="h-text">
+        <h2>
+          Our History
+        </h2>
+        <p>
+          We make and grow the best coffee in Peru, accompanying families since 1930, with professional workers who harvest, collect and select the coffee with quality work, thus providing exquisite coffee to enjoy together as a family.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="steps">
+    <div class="step-content">
+      <h3>
+        Steps of manufacturing our products
+      </h3>
+      <div class="steps">
+        <div class="step-1">
+          <div class="s-1-circle">
+            <div class="step-circle"><p>01</p></div>
+            <div class="step-img-circle"><img src="images/steps-green-coffee.png"></div>
+          </div>
+          <p class="step-text">
+            Harvest occurs annually when the coffee beans reach maturity and are collected for processing.
+          </p>
+        </div>
+        <div class="step-2">
+          <p class="step-text">
+            The beans are dried using a wet or dry technique, depending on the taste we want to obtain.
+          </p>
+          <div class="c-2-circle">
+            <div class="step-circle"><p>02</p></div>
+            <div class="step-img-circle"><img src="images/steps-coffee-beans.png"></div>
+          </div>
+        </div>
+        <div class="step-3">
+          <div class="c-3-circle">
+            <div class="step-circle"><p>03</p></div>
+            <div class="step-img-circle"><img src="images/steps-ground-coffee 1.png"></div>
+          </div>
+          <p class="step-text">
+            The coffee is roasted and acquires its flavor by processing the grain in ovens.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonial">
+    <div class="comment">
+      <div class="comment-text">
+        <h4>
+          Coffee is the best drink in the morning, it keeps you focused.
+        </h4>
+        <p>
+          Jhon Doe
+        </p>
+      </div>
+      <div>
+        <img src="images/testimonial-coffee.png">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-content">
+      <div class="newsletter">
+        <img src="images/logo.png">
+        <p>Sign Up for our newsletter</p>
+      </div>
+      <div class="btn-newsletter">
+        <input type="email" placeholder="Enter e-mail address"  >
+        <a href="#">Subscribe</a>
+        <p>We care about your data. Read our <span>Privacy Policy</span></p>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+</body>
+</html>
