@@ -237,9 +237,49 @@
       font-family: var(--text-font);
     }
     .footer-content {
+      margin-top: 50px;
       display: flex;
       justify-content: space-around;
       align-items: center;
+    }
+    .newsletter p {
+      font-size: 36px;
+      font-weight: 400;
+      color: white;
+      font-style: normal;
+    }
+    input[type="email"] {
+      display: block;
+    outline: 0px;
+    width: 360px;
+    height: 64px;
+    background-color: transparent;
+    border: 2px solid var(--text-color-light);
+    border-radius: 64px;
+    }
+    input[type="email"]::placeholder {
+      padding-left: 20px;
+      font-size: 16px;
+    }
+    .btn-newsletter{
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      height: 250px;
+    }
+    .btn-sub{
+      padding: 10px 15px;
+      border-radius: 64px;
+      background-color: var(--secondry-color);
+      box-shadow: 0px 8px 32px 0px rgba(221, 183,112,0.25);
+      font-family: var(--text-font);
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      text-decoration: none;
+      color: black;
     }
   </style>
 </head>
@@ -386,7 +426,7 @@
       </div>
       <div class="btn-newsletter">
         <input type="email" placeholder="Enter e-mail address"  >
-        <a href="#">Subscribe</a>
+        <a href="#" class="btn-sub">Subscribe</a>
         <p>We care about your data. Read our <span>Privacy Policy</span></p>
       </div>
     </div>
