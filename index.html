@@ -4,6 +4,7 @@
   <title> responsive nav bar and web-page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -72,9 +73,11 @@
       padding: 10px 0px 50px;
     }
     .hero-content p.content{
+      line-height: 22.5px;
       font-size: 16px;
       color: white;
       width: 412px;
+      height: 93px;
       font-family: var(--text-font);
     }
     .hero-content a.start{
@@ -281,6 +284,50 @@
       text-decoration: none;
       color: black;
     }
+    @media screen and (max-width:557px) {
+      .hambarger{
+        display: block;
+        font-size: 20px;
+        color: white;
+      }
+      .navbar ul{
+        display: none;
+      }
+      .hero-content{
+        display: block;
+        text-align: center;
+      }
+      .hero-content img{
+        width: 250px;
+        height: 200px;
+      }
+      .hero-content h2{
+        text-align: center;
+      }
+      .hero-content h2 br{
+        display: none;
+      }
+
+      .product-content{
+          text-align: center;
+          display: block;
+      }
+      .p-box{
+        display: block;
+      }
+    }
+    @media screen and (min-width: 992px){
+      .hambarger{
+        display: none;
+      }
+      .navbar ul{
+        display: block;
+      }
+      .hero-content img{
+        width: auto;
+
+      }
+    }
   </style>
 </head>
 <body>
@@ -289,7 +336,7 @@
         <div class="logo">
           <a href="#"><img src="images/logo.png"></a>
         </div>
-        <div class="hambarger"></div>
+        <div class="hambarger"><i class="fa-solid fa-bars"></i></div>
          <ul>
           <li><a href="#hero">Home</a> </li>
           <li><a href="#products">Products</a> </li>
